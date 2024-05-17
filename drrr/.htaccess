@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-z0-9_]+)/*$              index.php?controller=$1&%{QUERY_STRING} [L]
+RewriteRule ^([a-z0-9_]+)/([a-z0-9_]+)/*$ index.php?controller=$1&action=$2&%{QUERY_STRING} [L]
